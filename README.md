@@ -2,7 +2,8 @@
 Cara install
 
 1. clone project
-		git clone git@github.com:tekdungtralala/makarizo.git
+\n
+git clone git@github.com:tekdungtralala/makarizo.git
 
 2. buat folder platforms
 		mkdir platforms
