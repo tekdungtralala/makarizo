@@ -1,7 +1,7 @@
 (function() {
 	"use strict";
 	
-	angular.module('app.howtoplay')
+	angular.module('app.tab.howtoplay')
 		.controller('HowtoplayCtrl', HowtoplayCtrl);
 
 	function HowtoplayCtrl() {
