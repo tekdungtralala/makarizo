@@ -12,10 +12,7 @@
 	angular.module('app', [
 		'ionic', 
 		'app.tab',
-		'app.tab.home',
-		'app.tab.howtoplay',
-		'app.tab.highscore',
-		'app.tab.product'
+		'app.game',
 	])
 
 	.run(function($ionicPlatform) {
