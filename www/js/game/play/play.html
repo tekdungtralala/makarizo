@@ -1,9 +1,35 @@
 <ion-view view-title="Mulai Bermain" hide-nav-bar="true">
-	<ion-content>
-		<ion-list>
-			<ion-item>
-				Game play.html
-			</ion-item>
-		</ion-list>
+	<ion-content class="game-play">
+		<div class="row">
+			<div class="col col-33 center">
+				<div class="circle first-circle">
+					<input class="knob times"  
+						data-max="60" 
+						data-bgColor="#303" 
+						data-fgColor="#ffec03" 
+						data-displayInput=true 
+						data-width="60" 
+						data-height="60" 
+						data-thickness=".2" 
+						data-skin="tron" 
+						value="20"/>
+				</div>
+			</div>
+			<div class="col col-33 center">
+				<div class="circle second-circle">
+					Score
+					<br/>
+					20
+				</div>
+			</div>
+			<div class="col col-33">
+				<div class="circle second-circle">
+					Level
+					<br/>
+					2
+				</div>
+			</div>
+			</div>
+		</div>
 	</ion-content>
 </ion-view>

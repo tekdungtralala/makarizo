@@ -1,0 +1,21 @@
+.game-play .circle {
+	text-align:center;
+	background: #606;
+	color: #FFF;
+	-moz-border-radius: 100px;
+	-webkit-border-radius: 100px;
+	border-radius: 100px;
+	height: 70px;
+	width: 70px;
+	text-align: center;
+	margin: 0 auto;
+}
+.game-play .circle.first-circle {
+	padding-top: 5px;
+	padding-left: 2px;
+}
+
+.game-play .circle.second-circle {
+	padding-top:15px;
+	font-size:15px;
+}

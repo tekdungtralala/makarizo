@@ -1,0 +1,185 @@
+* {
+	padding:0;
+	margin:0;
+}
+
+body {
+	background:url(../../images/bgGame.png) fixed no-repeat;
+}
+
+#cards {
+	position: relative;
+	width: 900px;
+	height: auto;
+	display: none;
+	margin:150px 30px 0 40px;
+}
+
+/* Define the 3D perspective view and dimension of each card. */
+.card {
+	-webkit-perspective: 600;
+	width: 109px;
+	height: 109px;
+	position: absolute;
+	-moz-transition: all .3s;
+	-webkit-transition: all .3s;
+	transition: all .3s;
+	cursor: pointer;
+	background: rgb(255,255,255); /* Old browsers */
+	background: -moz-linear-gradient(top,  rgba(255,255,255,1) 9%, rgba(238,238,238,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(9%,rgba(255,255,255,1)), color-stop(100%,rgba(238,238,238,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 9%,rgba(238,238,238,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgba(255,255,255,1) 9%,rgba(238,238,238,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgba(255,255,255,1) 9%,rgba(238,238,238,1) 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  rgba(255,255,255,1) 9%,rgba(238,238,238,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#eeeeee',GradientType=0 ); /* IE6-9 */
+}
+
+.face {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	-webkit-transition-property: opacity, transform, box-shadow;
+	-webkit-transition-duration: .3s;
+	-webkit-backface-visibility: hidden;
+	
+	-moz-transition-property: opacity, transform, box-shadow;
+	-moz-transition-duration: .3s;
+	-moz-backface-visibility: hidden;
+	
+	transition-property: opacity, transform, box-shadow;
+	transition-duration: .3s;
+	backface-visibility: hidden;
+}
+
+.front {
+	background: url(../images/deck.jpg) -439px -879px;
+	z-index: 10;
+}
+.back {
+	background: #efefef url(../images/deck.jpg);
+	-webkit-transform: rotate3d(0,1,0,-180deg);
+	z-index: 8;
+}
+
+.card:hover .face, .card-flipped .face {
+	-webkit-box-shadow: 0 0 10px #0F3;
+	-moz-box-shadow: 0 0 10px #0F3;
+	box-shadow: 0 0 10px #0F3;
+}
+.card-flipped .front {
+	-webkit-transform: rotate3d(0,1,0,180deg);
+	-moz-transform: rotate3d(0,1,0,180deg);
+	transform: rotate3d(0,1,0,180deg);
+	z-index: 8;
+}
+.card-flipped .back {
+	-webkit-transform: rotate3d(0,1,0,0deg);
+	-moz-transform: rotate3d(0,1,0,0deg);
+	transform: rotate3d(0,1,0,0deg);
+	z-index: 10;
+}
+.card-removed {
+	opacity: 0;
+}
+
+.gambar1 { background-position: 0 0; }
+.gambar2 { background-position: -110px 0; }
+.gambar3 { background-position: -220px 0; }
+.gambar4 { background-position: -330px 0; }
+.gambar5 { background-position: -440px 0; }
+.gambar6 { background-position: -550px 0; }
+.gambar7 { background-position: -660px 0; }
+.gambar8 { background-position: -770px 0; }
+.gambar9 { background-position: -880px 0; }
+.gambar10 { background-position: -990px 0; }
+.gambar11 { background-position: -1100px 0; }
+.gambar12 { background-position: -1210px 0; }
+.gambar13 { background-position: 0 -110px; }
+.gambar14 { background-position: -110px -110px; }
+.gambar15 { background-position: -220px -110px; }
+.gambar16 { background-position: -330px -110px; }
+.gambar17 { background-position: -440px -110px; }
+.gambar18 { background-position: -550px -110px; }
+.gambar19 { background-position: -660px -110px; }
+.gambar20 { background-position: -770px -110px; }
+.gambar21 { background-position: -880px -110px; }
+.gambar22 { background-position: -990px -110px; }
+.gambar23 { background-position: -1100px -110px; }
+.gambar24 { background-position: -1210px -110px; }
+.gambar25 { background-position: 0 -220px; }
+.gambar26 { background-position: -110px -220px; }
+.gambar27 { background-position: -220px -220px; }
+.gambar28 { background-position: -330px -220px; }
+.gambar29 { background-position: -440px -220px; }
+.gambar30 { background-position: -550px -220px; }
+.gambar31 { background-position: -660px -220px; }
+.gambar32 { background-position: -770px -220px; }
+.gambar33 { background-position: -880px -220px; }
+.gambar34 { background-position: -990px -220px; }
+.gambar35 { background-position: -1100px -220px; }
+.gambar36 { background-position: -1210px -220px; }
+.gambar37 { background-position: 0 -330px; }
+.gambar38 { background-position: -110px -330px; }
+.gambar39 { background-position: -220px -330px; }
+.gambar40 { background-position: -330px -330px; }
+.gambar41 { background-position: -440px -330px; }
+.gambar42 { background-position: -550px -330px; }
+.gambar43 { background-position: -660px -330px; }
+.gambar44 { background-position: -770px -330px; }
+.gambar45 { background-position: -880px -330px; }
+.gambar46 { background-position: -990px -330px; }
+.gambar47 { background-position: -1100px -330px; }
+.gambar48 { background-position: -1210px -330px; }
+.gambar49 { background-position: 0 -440px; }
+.gambar50 { background-position: -110px -440px; }
+.gambar51 { background-position: -220px -440px; }
+.gambar52 { background-position: -330px -440px; }
+.gambar53 { background-position: -440px -440px; }
+.gambar54 { background-position: -550px -440px; }
+.gambar55 { background-position: -660px -440px; }
+.gambar56 { background-position: -770px -440px; }
+.gambar57 { background-position: -880px -440px; }
+.gambar58 { background-position: -990px -440px; }
+.gambar59 { background-position: -1100px -440px; }
+.gambar60 { background-position: -1210px -440px; }
+.gambar61 { background-position: 0 -550px; }
+.gambar62 { background-position: -110px -550px; }
+.gambar63 { background-position: -220px -550px; }
+.gambar64 { background-position: -330px -550px; }
+.gambar65 { background-position: -440px -550px; }
+.gambar66 { background-position: -550px -550px; }
+.gambar67 { background-position: -660px -550px; }
+.gambar68 { background-position: -770px -550px; }
+.gambar69 { background-position: -880px -550px; }
+.gambar70 { background-position: -990px -550px; }
+.gambar71 { background-position: -1100px -550px; }
+.gambar72 { background-position: -1210px -550px; }
+.gambar73 { background-position: 0 -660px; }
+.gambar74 { background-position: -110px -660px; }
+.gambar75 { background-position: -220px -660px; }
+.gambar76 { background-position: -330px -660px; }
+.gambar77 { background-position: -440px -660px; }
+.gambar78 { background-position: -550px -660px; }
+.gambar79 { background-position: -660px -660px; }
+.gambar80 { background-position: -770px -660px; }
+.gambar81 { background-position: -880px -660px; }
+.gambar82 { background-position: -990px -660px; }
+.gambar83 { background-position: -1100px -660px; }
+.gambar84 { background-position: -1210px -660px; }
+.gambar85 { background-position: 0 -770px; }
+.gambar86 { background-position: -110px -770px; }
+.gambar87 { background-position: -220px -770px; }
+.gambar88 { background-position: -330px -770px; }
+.gambar89 { background-position: -440px -770px; }
+.gambar90 { background-position: -550px -770px; }
+.gambar91 { background-position: -660px -770px; }
+.gambar92 { background-position: -770px -770px; }
+.gambar93 { background-position: -880px -770px; }
+.gambar94 { background-position: -990px -770px; }
+.gambar95 { background-position: -1100px -770px; }
+.gambar96 { background-position: -1210px -770px; }
+.gambar97 { background-position: 0 -880px; }
+.gambar98 { background-position: -110px -880px; }
+.gambar99 { background-position: -220px -880px; }
+.gambar100 { background-position: -330px -880px; }
