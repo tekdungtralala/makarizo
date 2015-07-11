@@ -32,19 +32,18 @@
 			}
 		});
 
-		var goTabHomeList = ['tab.highscore', 'tab.howtoplay', 'tab.product', 'game.play'];
+		var goTabHomeList = ['tab.highscore', 'tab.howtoplay', 'tab.product', 'game.signin'];
+		var doNothingList = ['game.play', 'game.finish'];
 		$ionicPlatform.registerBackButtonAction(function () {
 
 			if ($state && $state.current && $state.current.name) {
 				var stateName = $state.current.name;
 
-				var backToTabHome = _.find(goTabHomeList, function(t) {
-					return t === stateName;
-				})
-				if (backToTabHome) {
-					$state.go('tab.home');
-					return false;
-				}
+				var backToTabHome = _.find(goTabHomeList, function(t) { return t === stateName;})
+				if (backToTabHome) { $state.go('tab.home'); return false; }
+
+				var doNothing = _.find(doNothingList, function(t) { return t === stateName;})
+				if (doNothing) {return false; }
 			}
 
 			navigator.app.exitApp();

@@ -1,0 +1,93 @@
+.game-signin-image-center {
+	display: block;
+  margin-left: auto;
+  margin-right: auto;
+	max-width: 100%;
+	height: auto;
+}
+
+.game-signin .button.m-btn-default {
+  border-color: #b2b2b2;
+  background-color: #f8f8f8;
+  color: #444;
+  position: relative;
+  display: inline-block;
+  margin: 0;
+  padding: 0 12px;
+  min-width: 52px;
+  min-height: 30px;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 2px;
+  vertical-align: top;
+  text-align: center;
+  text-overflow: ellipsis;
+  font-size: 16px;
+  line-height: 42px;
+  cursor: pointer;
+	width: inherit;
+  text-shadow: none;
+  box-shadow: none;
+  background-image: none;
+
+	padding: 2px 4px 1px;
+  min-width: 28px;
+  min-height: 30px;
+  font-size: 12px;
+  line-height: 26px;
+
+  margin-left: 5px;
+  margin-top: 5px;
+}
+
+.game-signin .button.m-btn-default.m-btn-right {
+	float: right;
+	margin-right: 5px;
+}
+
+.game-signin-label {
+	font-size: 15px;
+}
+
+.game-signin-note {
+	font-size: 13px;
+}
+
+.game-signin-userscore {
+	float: left;
+  padding-right: 20px;
+  position: relative;
+  top: 10px;
+}
+
+.game-signin-font {
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+#game-signin-startgame {
+	padding:10px 15px;
+	width:340px;
+	width: inherit;
+	margin-top:20px;
+	
+	background: #cb60b3; /* Old browsers */
+	background: -moz-linear-gradient(top,  #cb60b3 0%, #c146a1 50%, #a80077 51%, #db36a4 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#cb60b3), color-stop(50%,#c146a1), color-stop(51%,#a80077), color-stop(100%,#db36a4)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #cb60b3 0%,#c146a1 50%,#a80077 51%,#db36a4 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #cb60b3 0%,#c146a1 50%,#a80077 51%,#db36a4 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #cb60b3 0%,#c146a1 50%,#a80077 51%,#db36a4 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #cb60b3 0%,#c146a1 50%,#a80077 51%,#db36a4 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cb60b3', endColorstr='#db36a4',GradientType=0 ); /* IE6-9 */
+	
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	border-radius:5px;
+	
+	border:1px solid #B700B7;
+	color:#FFF;
+	
+	font-size:24px;
+	text-shadow:1px 1px 1px rgba(0,0,0,.8);
+	cursor:pointer;
+}
+}

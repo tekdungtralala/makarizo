@@ -1,0 +1,74 @@
+<ion-view view-title="Mulai Bermain" hide-nav-bar="true" class="m-bacground">
+	<ion-content class="game-signin game-signin-font">
+
+		<button 
+			ng-click="vm.backToHome()"
+			class="m-btn-default button icon-left ion-chevron-left button-small button-positive">
+			Beranda
+		</button>
+
+		<button 
+			ng-show="vm.isLogged"
+			ng-click="vm.doLogin()"
+			class="m-btn-default m-btn-right button icon-right ion-log-out button-small button-positive">
+			Logout
+		</button>
+		
+
+		<div class="row">
+			<div class="col" >
+					<img  ng-src="images/350-150.png" class="game-signin-image-center" />
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col" >
+					<img  ng-src="images/img_08.png" class="game-signin-image-center" />
+			</div>
+			<div class="col" >
+					<img  ng-src="images/img_08.png" class="game-signin-image-center" />
+			</div>
+		</div>
+
+		<div class="row" ng-show="!vm.isLogged">
+			<div class="col" >
+				<a 
+					ng-click="vm.doLogin()"
+					href="">
+					<img src="images/fb.png" class="game-signin-image-center"/>
+				</a>
+			</div>
+		</div>
+
+		<div class="row" ng-show="vm.isLogged">
+			<div class="col game-signin-label" >
+				<strong>Nama Pengguna</strong><br/>
+				<strong>Lorem Ipsum</strong><br/>
+				<strong>Skor mu Sekarang : 33</strong>
+			</div>
+		</div>
+
+		<div class="row" ng-show="vm.isLogged">
+			<div class="col game-signin-note">
+				Ayo tambah lagi skor mu dengan memainkan game ini.<br/>
+				upload struk di bawah ini yaa...
+			</div>
+		</div>
+
+		<div class="row" ng-show="vm.isLogged">
+			<div class="col game-signin-label" >
+				<strong>Upload Struk</strong> <input type="file" name="foto" />
+			</div>
+		</div>
+
+		<div class="row" ng-show="vm.isLogged">
+			<div class="col game-signin-image-center">
+				<button 
+					ng-click="vm.gotoPlay()"
+					id="game-signin-startgame">Mulai Main!!</button>
+			</div>
+		</div>
+		
+
+	</ion-content>
+</ion-view>

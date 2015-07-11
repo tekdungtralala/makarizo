@@ -22,6 +22,8 @@
 		vm.score = null;
 		vm.level = null;
 
+		vm.gotoSignin = gotoSignin;
+
 		activate();
 		function activate() {
 			var score = $stateParams.score;
@@ -32,6 +34,10 @@
 				vm.score = score;
 				vm.level = level;
 			}
+		}
+
+		function gotoSignin() {
+			$state.go('game.signin');
 		}
 	}
 })();

@@ -35,7 +35,9 @@
 				<p id="msg">
 					Score : {{vm.score}}
 				</p>
-				<input class="button game-finish-save-btn" value="Simpan Skor mu">
+				<button 
+					ng-click="vm.gotoSignin()"
+					class="button game-finish-save-btn">Simpan Skor mu</button>
 			</div>		
 		</div>
 	</ion-content>
