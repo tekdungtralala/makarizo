@@ -4,19 +4,12 @@
 	angular.module('app.game.play')
 		.controller('PlayCtrl', PlayCtrl);
 
-	function PlayCtrl($interval, $timeout) {
+	function PlayCtrl($interval, $timeout, $state) {
 
 		var TOTAL_IMAGE = 25;
 		var WAITING_TIME = 300;
 		var TOTAL_CARD = [0, 4, 6, 8, 10, 12, 16, 20];
-		function getTotalCard(level) {
-			var maxLevel = TOTAL_CARD.length - 1;
-			if (level >= maxLevel) {
-				return TOTAL_CARD[maxLevel];
-			} else {
-				return TOTAL_CARD[level];
-			}
-		}
+
 		var MAX_TIME = [0, 5, 10, 15, 20, 25, 30, 35];
 		var imageUrls = [];
 		var vm = this;
@@ -68,7 +61,7 @@
 
 				initLevel(vm.level + 1);
 				vm.options.max = MAX_TIME[vm.level];
-				
+
 				restartTime();
 			}, WAITING_TIME)
 		}
@@ -86,7 +79,8 @@
 
 		function endGame() {
 			$timeout(function(){
-				alert('waktu abis')
+				alert('timeout, lets try again');
+				$state.go('tab.home')
 			}, 100)
 		}
 
@@ -193,6 +187,15 @@
 			if (2 === vm.level || 3 === vm.level) return "col-33";
 			if (4 === vm.level || 5 === vm.level || 6 === vm.level) return "col-25";
 			else return "col-20";
+		}
+
+		function getTotalCard(level) {
+			var maxLevel = TOTAL_CARD.length - 1;
+			if (level >= maxLevel) {
+				return TOTAL_CARD[maxLevel];
+			} else {
+				return TOTAL_CARD[level];
+			}
 		}
 
 		function getRndmItem(items) {
