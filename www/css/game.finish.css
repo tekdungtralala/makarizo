@@ -1,4 +1,4 @@
-.game-play .circle {
+.game-finish .circle {
 	text-align:center;
 	background: #606;
 	color: #FFF;
@@ -11,39 +11,20 @@
 	margin: 0 auto;
 }
 
-.game-play .circle.first-circle {
+.game-finish .circle.first-circle {
 	padding-top: 5px;
 	padding-left: 2px;
 }
 
-.game-play .circle.second-circle {
+.game-finish .circle.second-circle {
 	padding-top:15px;
 	font-size:15px;
 }
 
-.game-play-card-center {
+.game-finish-card-center {
 	display: block;
   margin-left: auto;
   margin-right: auto;
 	max-width: 100%;
 	height: auto;
-}
-
-.game-play-row {
-	min-height: 110px;
-}
-
-#gameComplete {
-	top: 10px;
-}
-
-#msg {
-  text-align: left;
-  top: 18px;
-  position: relative;
-}
-
-.game-finish-save-btn {
-	font-size: 20px;
-	margin-top: 65px;
 }

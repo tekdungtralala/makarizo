@@ -5,3 +5,7 @@
 .has-tabs-top {
 	top: 58px;
 }
+
+.m-bacground {
+	background: url('/images/bgGame2.png');
+}

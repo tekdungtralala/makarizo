@@ -1,5 +1,11 @@
 <ion-view view-title="Mulai Bermain" hide-nav-bar="true" class="m-bacground">
-	<ion-content class="game-play">
+	<ion-content class="game-finish">
+		<div class="row">
+			<div class="col" >
+					<img  ng-src="images/350-150.png" class="game-finish-card-center" />
+			</div>
+		</div>
+
 		<div class="row">
 			<div class="col col-33">
 				<div class="circle first-circle">
@@ -23,21 +29,14 @@
 			</div>
 		</div>
 
-		<div class="row" ng-repeat="row in vm.rows">
-			<div class="col {{vm.getDeckClass()}} game-play-row" ng-repeat="col in vm.cols">
-				<div ng-if="vm.imageUrls[row][col]">
-					<img 
-						ng-click="vm.changeImageState(row, col)"
-						ng-show="!vm.imageState[row][col]"
-						ng-src="{{vm.defaultCard}}"
-						class="game-play-card-center" />
-					<img 
-						ng-show="vm.imageState[row][col]"
-						ng-src="{{vm.imageUrls[row][col]}}"
-						class="game-play-card-center" />
-				</div>
-			</div>
+		<div class="row">
+			<div id="gameComplete" style="display: table;">
+				<p id="titlemsg">GAME OVER!!</p>
+				<p id="msg">
+					Score : {{vm.score}}
+				</p>
+				<input class="button game-finish-save-btn" value="Simpan Skor mu">
+			</div>		
 		</div>
-		
 	</ion-content>
 </ion-view>

@@ -3,5 +3,6 @@
 
 	angular.module('app.game', [
 		'app.game.play',	
+		'app.game.finish'
 	]);
 })();

@@ -79,8 +79,7 @@
 
 		function endGame() {
 			$timeout(function(){
-				alert('timeout, lets try again');
-				$state.go('tab.home')
+				$state.go('game.finish', {level: vm.level, score: vm.score})
 			}, 100)
 		}
 
@@ -224,4 +223,3 @@
 	}
 
 })();
-
