@@ -10,6 +10,7 @@
 	text-align: center;
 	margin: 0 auto;
 }
+
 .game-play .circle.first-circle {
 	padding-top: 5px;
 	padding-left: 2px;
@@ -19,10 +20,15 @@
 	padding-top:15px;
 	font-size:15px;
 }
+
 .game-play-card-center {
 	display: block;
   margin-left: auto;
   margin-right: auto;
 	max-width: 100%;
 	height: auto;
+}
+
+.game-play-row {
+	min-height: 110px;
 }

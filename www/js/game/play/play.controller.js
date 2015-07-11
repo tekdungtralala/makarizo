@@ -49,25 +49,25 @@
 		activate();
 		function activate() {
 			initImages();
-			nextLevel();
+			nextLevel(1);
 		}
 
-		function nextLevel () {
+		function nextLevel(newLevel) {
 			if (timeLoop) $interval.cancel(timeLoop);
 
 			$timeout(function(){
-				vm.time = 0;
+				vm.level = newLevel;
 				totalOpenedCard = 0;
 
-				initLevel(vm.level + 1);
-				vm.options.max = MAX_TIME[vm.level];
-
+				initLevel(vm.level);
+				var maxTime = getMaxTime(vm.level);
+				vm.time = maxTime;
+				vm.options.max = maxTime;
 				restartTime();
 			}, WAITING_TIME)
 		}
 
 		function initLevel(newLevel) {
-			vm.level = newLevel;
 			if (1 === vm.level) updateDeck(2, 2, getTotalCard(1));
 			else if (2 === vm.level) updateDeck(2, 3, getTotalCard(2));
 			else if (3 === vm.level) updateDeck(3, 3, getTotalCard(3), [{i: 1, j: 1}]);
@@ -86,8 +86,8 @@
 
 		function restartTime () {
 			timeLoop = $interval(function () {
-				vm.time++;
-				if (vm.time >= MAX_TIME[vm.level]) {
+				vm.time--;
+				if (vm.time === 0) {
 					$interval.cancel(timeLoop);
 					endGame();
 				}
@@ -115,7 +115,7 @@
 						totalOpenedCard = totalOpenedCard + 2;
 
 						if (getTotalCard(vm.level) === totalOpenedCard)
-							nextLevel();
+							nextLevel(vm.level + 1);
 					}
 				} else {
 					firstSelect.row = row;
@@ -195,6 +195,15 @@
 				return TOTAL_CARD[maxLevel];
 			} else {
 				return TOTAL_CARD[level];
+			}
+		}
+
+		function getMaxTime(level) {
+			var maxLevel = MAX_TIME.length - 1;
+			if (level >= maxLevel) {
+				return MAX_TIME[maxLevel];
+			} else {
+				return MAX_TIME[level];
 			}
 		}
 

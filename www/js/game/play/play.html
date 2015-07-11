@@ -24,7 +24,7 @@
 		</div>
 
 		<div class="row" ng-repeat="row in vm.rows">
-			<div class="col {{vm.getDeckClass()}}" ng-repeat="col in vm.cols">
+			<div class="col {{vm.getDeckClass()}} game-play-row" ng-repeat="col in vm.cols">
 				<div ng-if="vm.imageUrls[row][col]">
 					<img 
 						ng-click="vm.changeImageState(row, col)"
