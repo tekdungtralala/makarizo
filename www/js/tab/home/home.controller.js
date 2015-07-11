@@ -2,9 +2,9 @@
 	"use strict";
 	
 	angular.module('app.tab.home')
-		.controller('HomeCtrl', HomeCtrl);
+		.controller('TabHomeCtrl', TabHomeCtrl);
 
-	function HomeCtrl($scope) {
+	function TabHomeCtrl($scope) {
 		var vm = {};
 		vm.go = go;
 		vm.abc="def"

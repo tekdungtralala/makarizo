@@ -11,11 +11,14 @@
 
 	angular.module('app', [
 		'ionic', 
+		'ui.knob',
+
+		'app.home',
 		'app.tab',
 		'app.game',
 	])
 
-	.run(function($ionicPlatform) {
+	.run(function($ionicPlatform, $state) {
 		$ionicPlatform.ready(function() {
 			// Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
 			// for form inputs)
@@ -28,6 +31,24 @@
 				StatusBar.hide();
 			}
 		});
+
+		var goTabHomeList = ['tab.highscore', 'tab.howtoplay', 'tab.product', 'game.play'];
+		$ionicPlatform.registerBackButtonAction(function () {
+
+			if ($state && $state.current && $state.current.name) {
+				var stateName = $state.current.name;
+
+				var backToTabHome = _.find(goTabHomeList, function(t) {
+					return t === stateName;
+				})
+				if (backToTabHome) {
+					$state.go('tab.home');
+					return false;
+				}
+			}
+
+			navigator.app.exitApp();
+		}, 100);
 	})
 
 	.config(function($stateProvider, $urlRouterProvider) {

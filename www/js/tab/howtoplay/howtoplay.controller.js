@@ -2,9 +2,9 @@
 	"use strict";
 	
 	angular.module('app.tab.howtoplay')
-		.controller('HowtoplayCtrl', HowtoplayCtrl);
+		.controller('TabHowtoplayCtrl', TabHowtoplayCtrl);
 
-	function HowtoplayCtrl() {
+	function TabHowtoplayCtrl() {
 		// console.log("start howtoplay ctrl");
 	}
 

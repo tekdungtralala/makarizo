@@ -11,7 +11,7 @@
 				views: {
 					'tab-highscore': {
 						templateUrl: "js/tab/highscore/highscore.html",
-						controller: 'HighscoreCtrl'
+						controller: 'TabHighscoreCtrl'
 					}
 				}
 			});

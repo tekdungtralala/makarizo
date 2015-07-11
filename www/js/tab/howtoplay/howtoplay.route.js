@@ -11,7 +11,7 @@
 				views: {
 					'tab-howtoplay': {
 						templateUrl: "js/tab/howtoplay/howtoplay.html",
-						controller: 'HowtoplayCtrl'
+						controller: 'TabHowtoplayCtrl'
 					}
 				}
 			});

@@ -2,9 +2,9 @@
 	"use strict";
 	
 	angular.module('app.tab.product')
-		.controller('ProductCtrl', ProductCtrl);
+		.controller('TabProductCtrl', TabProductCtrl);
 
-	function ProductCtrl() {
+	function TabProductCtrl() {
 		// console.log("start howtoplay ctrl");
 	}
 

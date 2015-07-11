@@ -2,9 +2,9 @@
 	"use strict";
 	
 	angular.module('app.tab.highscore')
-		.controller('HighscoreCtrl', HighscoreCtrl);
+		.controller('TabHighscoreCtrl', TabHighscoreCtrl);
 
-	function HighscoreCtrl() {
+	function TabHighscoreCtrl() {
 		// console.log("start howtoplay ctrl");
 	}
 

@@ -11,7 +11,7 @@
 				views: {
 					'tab-home': {
 						templateUrl: "js/tab/home/home.html",
-						controller: 'HomeCtrl as vm'
+						controller: 'TabHomeCtrl as vm'
 					}
 				}
 			});

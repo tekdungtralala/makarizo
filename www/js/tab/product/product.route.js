@@ -11,7 +11,7 @@
 				views: {
 					'tab-product': {
 						templateUrl: "js/tab/product/product.html",
-						controller: 'ProductCtrl'
+						controller: 'TabProductCtrl'
 					}
 				}
 			});

@@ -1,0 +1,61 @@
+STASH
+
+play.controller.js
+/*
+		<button ng-click="vm.stop()">STOP</button><br/>
+		<button ng-click="vm.start()">START</button><br/>
+
+		var loop = null;
+		vm.stop = stopLoop; 
+		function stopLoop() {
+			$interval.cancel(loop);
+		}
+		vm.start = function (argument) {
+		 loop = $interval(function() {
+				console.log("vm.level : ", vm.level)
+				if (6 === vm.level) initLevelZero();
+				else if (0 === vm.level) initLevelOne();
+				else if (1 === vm.level) initLevelTwo();
+				else if (2 === vm.level) initLevelThree();
+				else if (3 === vm.level) initLevelFour();
+				else if (4 === vm.level) initLevelFive();
+				else if (5 === vm.level) initLevelMore();
+			}, 1000);
+		}
+		vm.start();
+
+		function test () {
+			console.log(vm.imageUrls)
+			var und = 0;
+			_.every(vm.imageUrls, function(data) {
+				_.every(data, function(d) {
+					if (undefined === d) {
+						und ++;
+					} else {
+						var sama = 0;
+						_.every(vm.imageUrls, function(cari) {
+							_.every(cari, function(c) {
+								if (c === d) {
+									sama++;
+								}
+								return true;
+							});
+							return true;
+						});
+						console.log("sama : ", sama);
+						if (sama !=2 ) {
+							stopLoop();
+							console.log("AFDSF")
+						}
+					}
+					return true;
+				})
+				return true;
+			})
+			console.log("undefined : ", und)
+			if (und > 2) {
+				stopLoop()
+				console.log("WAH ERROR")
+			}
+		}
+*/
