@@ -1,9 +1,35 @@
-<ion-view view-title="Skor Tertinggi" hide-nav-bar="true">
-	<ion-content>
-		<ion-list>
-			<ion-item>
-				highscore
-			</ion-item>
-		</ion-list>
+<ion-view view-title="Skor Tertinggi" hide-nav-bar="true" class="m-bacground">
+	<ion-content class="tab-highscore">
+
+		<div class="row">
+			<div class="col" >
+					<img ng-src="images/skor_images_03.png" class="m-image-center" />
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col col-20 m-center m-tab-hs-headertable">Posisi</div>
+			<div class="col m-center m-tab-hs-headertable">Nama Peserta</div>
+			<div class="col col-20 m-center m-tab-hs-headertable">Score</div>
+		</div>
+		<div class="row m-tab-hs-data" ng-repeat="(i, r) in vm.highscores">
+			<div class="col col-20 m-center" >{{i + 1}}</div>
+			<div class="col m-center" >{{r.name}}</div>
+			<div class="col col-20 m-center" >{{r.score}}</div>
+		</div>
+		<div class="row m-tab-hs-data">
+			<div class="col col-20 m-center" >
+				<button 
+					class="m-btn-default button ion-chevron-left button-small button-clear">
+				</button>
+			</div>
+			<div class="col m-center" ></div>
+			<div class="col col-20 m-center" >
+				<button 
+					class="m-btn-default button ion-chevron-right button-small button-clear">
+				</button>
+			</div>
+		</div>
+
 	</ion-content>
 </ion-view>
