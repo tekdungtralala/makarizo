@@ -41,6 +41,7 @@
 		var isSecondSelect = false;
 		var firstSelect = {};
 		var totalOpenedCard = 0;
+		var time = 0;
 
 		// function
 		vm.getDeckClass = getDeckClass;
@@ -61,7 +62,8 @@
 
 				initLevel(vm.level);
 				var maxTime = getMaxTime(vm.level);
-				vm.time = maxTime;
+				time = maxTime;
+				vm.time = time;
 				vm.options.max = maxTime;
 				restartTime();
 			}, WAITING_TIME)
@@ -85,8 +87,9 @@
 
 		function restartTime () {
 			timeLoop = $interval(function () {
-				vm.time--;
-				if (vm.time === 0) {
+				time--;
+				vm.time = time;
+				if (time === 0) {
 					$interval.cancel(timeLoop);
 					endGame();
 				}
@@ -94,9 +97,9 @@
 		}
 
 		function changeImageState(row, col) {
-			if (!flipState && !vm.imageState[row][col]) {
+			if (!flipState && vm.imageState[row][col] === 'close') {
 				flipState = true;
-				vm.imageState[row][col] = true;
+				vm.imageState[row][col] = 'open';
 
 				if (isSecondSelect) {
 					var firstValue = vm.imageUrls[firstSelect.row][firstSelect.col];
@@ -105,16 +108,21 @@
 					if (firstValue !== secondValue) {
 						$timeout(function (argument) {
 							flipState = false;
-							vm.imageState[row][col] = false;
-							vm.imageState[firstSelect.row][firstSelect.col] = false;
+							vm.imageState[row][col] = 'close';
+							vm.imageState[firstSelect.row][firstSelect.col] = 'close';
 						}, WAITING_TIME);
 					} else {
-						vm.score++;
-						flipState = false;
-						totalOpenedCard = totalOpenedCard + 2;
+						$timeout(function (argument) {
+							flipState = false;
+							vm.imageState[firstSelect.row][firstSelect.col] = 'hide';
+							vm.imageState[row][col] = 'hide';
 
-						if (getTotalCard(vm.level) === totalOpenedCard)
-							nextLevel(vm.level + 1);
+							vm.score++;
+							totalOpenedCard = totalOpenedCard + 2;
+
+							if (getTotalCard(vm.level) === totalOpenedCard)
+								nextLevel(vm.level + 1);
+						}, WAITING_TIME);
 					}
 				} else {
 					firstSelect.row = row;
@@ -153,13 +161,13 @@
 			}
 
 			// init imageUrls
+			vm.imageState = [];
 			vm.imageState = new Array(totalRow); 
 			vm.imageUrls = new Array(totalRow);
 			for (var i = 0; i < totalRow; i++) {
 
 				vm.imageUrls[i] = new Array(totalColumn);
 				vm.imageState[i] = new Array(totalColumn);
-
 				for (var j = 0; j < totalColumn; j++) {
 					var isSkip = false;
 					if (skip) {
@@ -169,9 +177,10 @@
 					}
 
 					if (!isSkip) vm.imageUrls[i][j] = imageUrls[getRndmItem(tmp)];
-					vm.imageState[i][j] = false;
+					vm.imageState[i][j] = "close";					
 				}
 			}
+			
 			// test();
 		}
 

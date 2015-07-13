@@ -28,11 +28,11 @@
 				<div ng-if="vm.imageUrls[row][col]">
 					<img 
 						ng-click="vm.changeImageState(row, col)"
-						ng-show="!vm.imageState[row][col]"
+						ng-show="vm.imageState[row][col] === 'close'"
 						ng-src="{{vm.defaultCard}}"
 						class="game-play-card-center" />
 					<img 
-						ng-show="vm.imageState[row][col]"
+						ng-show="vm.imageState[row][col] === 'open'"
 						ng-src="{{vm.imageUrls[row][col]}}"
 						class="game-play-card-center" />
 				</div>
