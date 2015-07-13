@@ -19,19 +19,23 @@
 			<div class="col col-20 m-center m-tab-hs-headertable">Score</div>
 		</div>
 		<div class="row m-tab-hs-data" ng-repeat="(i, r) in vm.highscores">
-			<div class="col col-20 m-center" >{{i + 1}}</div>
+			<div class="col col-20 m-center" >{{vm.position + i}}</div>
 			<div class="col m-center" >{{r.name}}</div>
 			<div class="col col-20 m-center" >{{r.score}}</div>
 		</div>
 		<div class="row m-tab-hs-data">
 			<div class="col col-20 m-center" >
 				<button 
+					ng-click="vm.updatedata(false)"
+					ng-show="vm.showPrevBtn"
 					class="m-btn-default button ion-chevron-left button-small button-clear">
 				</button>
 			</div>
 			<div class="col m-center" ></div>
 			<div class="col col-20 m-center" >
 				<button 
+					ng-click="vm.updatedata(true)"
+					ng-show="vm.showNextBtn"
 					class="m-btn-default button ion-chevron-right button-small button-clear">
 				</button>
 			</div>

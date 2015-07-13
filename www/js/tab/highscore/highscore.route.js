@@ -13,7 +13,8 @@
 						templateUrl: "js/tab/highscore/highscore.html",
 						controller: 'TabHighscoreCtrl as vm'
 					}
-				}
+				},
+				cache: false
 			});
 	};
 
