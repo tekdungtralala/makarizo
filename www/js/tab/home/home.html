@@ -1,14 +1,26 @@
 <ion-view view-title="Beranda" hide-nav-bar="true" class="m-bacground">
-	<ion-content>
+	<ion-content class="tab-home">
 	
 		<div class="row">
 			<div class="col" >
 					<img  ng-src="images/350-150.png" class="m-image-center" />
 			</div>
 		</div>
-				<button class="button button-small button-positive"
-					ui-sref="game.signin">
-					Play Game
-				</button>
+
+		<div class="row">
+			<div class="col" >
+					<img  ng-src="images/img_08.png" class="game-signin-image-center" />
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col" >
+					<img  ng-src="images/hadiah.png" class="game-signin-image-center" />
+			</div>
+		</div>
+
+		<button class="button button-small button-positive btn-start" ui-sref="game.signin">
+			Play Game
+		</button>
 	</ion-content>
 </ion-view>
