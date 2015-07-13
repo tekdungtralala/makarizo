@@ -1,9 +1,9 @@
 /* Empty. Add your own CSS if you like */
 .tabs-top > .tabs, .tabs.tabs-top { 
-	top: 10px !important;
+	top: 0px !important;
 }
 .has-tabs-top {
-	top: 58px;
+	top: 45px;
 }
 
 .m-bacground {
