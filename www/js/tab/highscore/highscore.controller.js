@@ -14,8 +14,8 @@
 		}
 
 		function dummyData() {
-			var url = "dummyData.json"
-			// return $http(url).then(processData).catch(processData);
+			var url = "https://raw.githubusercontent.com/tekdungtralala/makarizo/9e776132b893b85d9c19c55b9d14eba8b0f8fb36/dummydata.json"
+			return $http.get(url).then(processData).catch(processData);
 		}
 
 		function processData(result) {
