@@ -1,4 +1,4 @@
-Cara install "OM"
+Cara install 
 
 
 1. clone project
