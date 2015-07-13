@@ -1,9 +1,72 @@
-<ion-view view-title="Produk" hide-nav-bar="true">
-	<ion-content>
-		<ion-list>
-			<ion-item>
-				product
-			</ion-item>
-		</ion-list>
+<ion-view view-title="Produk" hide-nav-bar="true" class="m-bacground">
+	<ion-content class="tab-product">
+
+		<div class="row">
+			<div class="col" >
+					<img  ng-src="images/350-150.png" class="m-image-center" />
+			</div>
+		</div>
+
+		<ion-slide-box active-slide="vm.activeSlide">
+			<ion-slide>
+				<div class="row">
+					<div class="col col-50 col-offset-25">
+						<img ng-src="images/kuning.jpg" class="m-image-center tab-product-img" />
+					</div>
+				</div>
+				<div class="tab-product-info">
+					<h4>Hair Energy Creambath With Kiwi Extract</h4>
+					<strong>Untuk Rambut Rebonding, Diwarnai &amp; Di Keriting</strong>
+					<p>
+						Khusus untuk rambut yang sudah mengalami proses kimia, pelurusan,
+						pengeritingan dan pewarnaan termasuk proses bleach. 
+						Ekstrak kiwi berfungsi untuk memberi asupan gizi bagi rambut berwarna, 
+						dan juga bersifat sebagai anti oksidant yang melindungi rambut. 
+						Vitamin C, E dan Kalium nya yang terkandung dalam Kiwi, 
+						menjaga keseimbangan kelembaban rambut. 
+						Rambut menjadi lembut dan berkilau.
+					</p>
+				</div>
+				<br/><br/>
+			</ion-slide>
+			<ion-slide>
+				<div class="row">
+					<div class="col col-50 col-offset-25">
+						<img ng-src="images/hijau.jpg" class="m-image-center tab-product-img" />
+					</div>
+				</div>
+				<div class="tab-product-info">
+					<h1 style="text-align:left;">Hair Energy Creambath With Aloe Vera</h1>
+					<strong>Untuk Rambut Normal</strong>
+					<p>
+						Mengandung aloe vera yang memberi nutrisi pada rambut. 
+						Memberi sensasi yang dapat menyegarkan kulit kepala. 
+						Membantu pertumbuhan rambut. Rambut tampak sehat berkilau alami.
+					</p>
+				</div>
+				<br/><br/>
+			</ion-slide>
+			<ion-slide>
+				<div class="row">
+					<div class="col col-50 col-offset-25">
+						<img ng-src="images/jingga.jpg" class="m-image-center tab-product-img" />
+					</div>
+				</div>
+				<div class="tab-product-info">
+					<h1 style="text-align:left;">Hair Energy Creambath With Royal Jelly</h1>
+					<strong>Untuk Rambut Rusak</strong>
+					<p>
+						Khusus untuk rambut yang kering, kusam dan rusak,
+						yang disebabkan sinar matahari, air, pemakaian alat-alat
+						dan produk styling. Kandungan royal jelly nya menyehatkan 
+						dan menguatkan akar rambut. Memelihara kelembaban dan 
+						menjaga elastisitas rambut. Menjaga rambut agar tidak kering, 
+						pecah-pecah dan kemerahan. Rambut bebas dari ketombe.
+					</p>
+				</div>
+				<br/><br/>
+			</ion-slide>
+		</ion-slide-box>
+
 	</ion-content>
 </ion-view>

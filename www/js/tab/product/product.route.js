@@ -11,9 +11,10 @@
 				views: {
 					'tab-product': {
 						templateUrl: "js/tab/product/product.html",
-						controller: 'TabProductCtrl'
+						controller: 'TabProductCtrl as vm'
 					}
-				}
+				},
+				cache: false
 			});
 	};
 
