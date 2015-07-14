@@ -25,33 +25,15 @@
 
 		<div class="row" ng-repeat="row in vm.rows">
 			<div class="col {{vm.getDeckClass()}} game-play-row" ng-repeat="col in vm.cols">
-				
+				<span ng-if="vm.imageUrls[row][col]">
 					<img ng-src="{{vm.defaultCard}}"
-						class="game-play-card-center gp-front gp-card {{vm.imageState[row][col]==='close'?'':'flipped'}}"
+class="game-play-card-center gp-front gp-card {{vm.imageState[row][col]==='close'?'':'flipped'}}"
 						ng-click="vm.changeImageState(row, col)"
 						/>
 					<img ng-src="{{vm.imageUrls[row][col]}}"
-						class="game-play-card-center gp-back gp-card {{vm.imageState[row][col]==='open'?'flipped':''}}"
+class="game-play-card-center gp-back gp-card {{vm.imageState[row][col]==='open'?'flipped':''}}"
 						/>
-				
-			</div>
-		</div>
-
-<button ng-click="vm.nexLevel()">asdf</button>
-<br/><br/><br/><br/><br/>
-		<div class="row" ng-repeat="row in vm.rows">
-			<div class="col {{vm.getDeckClass()}} game-play-row" ng-repeat="col in vm.cols">
-				<div ng-if="vm.imageUrls[row][col]">
-					<img 
-						ng-click="vm.changeImageState(row, col)"
-						ng-show="vm.imageState[row][col] === 'close'"
-						ng-src="{{vm.defaultCard}}"
-						class="game-play-card-center" />
-					<img 
-						ng-show="vm.imageState[row][col] === 'open'"
-						ng-src="{{vm.imageUrls[row][col]}}"
-						class="game-play-card-center" />
-				</div>
+				</span>
 			</div>
 		</div>
 		

@@ -51,21 +51,37 @@
 	bottom: 0;
 	margin: auto auto;
 	position: absolute;
+	-o-transition: all .5s;
+	-ms-transition: all .5s;
+	-moz-transition: all .5s;
+	-webkit-transition: all .5s;
 	transition: all .5s;
+	-webkit-backface-visibility: hidden;
+	-ms-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
 	backface-visibility: hidden;
 }
 .gp-front {
-    z-index: 2;
+	z-index: 2;
 }
 .gp-back {
-    z-index: 1;
-    transform: rotateX(-180deg);  
+	z-index: 1;
+	transform: rotateX(-180deg);
+	-webkit-transform: rotateX(-180deg);
+	-ms-transform: rotateX(-180deg);
+	-moz-transform: rotateX(-180deg);
 }
 .gp-front.flipped{
-    z-index: 1;
-    transform: rotateX(180deg);
+	z-index: 1;
+	transform: rotateX(180deg);
+	-webkit-transform: rotateX(180deg);
+	-ms-transform: rotateX(180deg);
+	-moz-transform: rotateX(180deg);
 }
 .gp-back.flipped{
-    z-index: 2;   
-    transform: rotateX(0deg);
+	z-index: 2;   
+	transform: rotateX(0deg);
+	-webkit-transform: rotateX(0deg);
+	-ms-transform: rotateX(0deg);
+	-moz-transform: rotateX(0deg);
 }

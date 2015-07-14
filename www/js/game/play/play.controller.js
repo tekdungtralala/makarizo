@@ -10,15 +10,10 @@
 		var WAITING_TIME = 300;
 		var TOTAL_CARD = [0, 4, 6, 8, 10, 12, 16, 20];
 
-		var MAX_TIME = [0, 512345, 1012345, 1512345, 2012345, 2512345, 3012345, 3512345];
+		var MAX_TIME = [0, 5, 10, 15, 20, 25, 30, 35];
 		var imageUrls = [];
 		var vm = this;
 		vm.defaultCard = "images/cardback.png";
-
-		vm.c = null;
-		vm.nexLevel = function() {
-			nextLevel(vm.level+1);
-		}
 
 		// header
 		vm.level = 0;
