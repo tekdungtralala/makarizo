@@ -21,18 +21,6 @@
 	font-size:15px;
 }
 
-.game-play-card-center {
-	display: block;
-  margin-left: auto;
-  margin-right: auto;
-	max-width: 100%;
-	height: auto;
-}
-
-.game-play-row {
-	min-height: 115px;
-}
-
 #gameComplete {
 	top: 10px;
 }
@@ -41,4 +29,43 @@
   text-align: left;
   top: 18px;
   position: relative;
+}
+
+.game-play-row {
+	min-height: 115px;
+	position: relative;
+	overflow: hidden;
+}
+.game-play-card-center {
+	display: block;
+  margin-left: auto;
+  margin-right: auto;
+	max-width: 100%;
+	height: auto;
+}
+.gp-card {
+	padding: 2px;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	margin: auto auto;
+	position: absolute;
+	transition: all .5s;
+	backface-visibility: hidden;
+}
+.gp-front {
+    z-index: 2;
+}
+.gp-back {
+    z-index: 1;
+    transform: rotateX(-180deg);  
+}
+.gp-front.flipped{
+    z-index: 1;
+    transform: rotateX(180deg);
+}
+.gp-back.flipped{
+    z-index: 2;   
+    transform: rotateX(0deg);
 }

@@ -53,11 +53,11 @@ body {
 }
 
 .front {
-	background: url(../images/deck.jpg) -439px -879px;
+	/*background: url(../images/deck.jpg) -439px -879px;*/
 	z-index: 10;
 }
 .back {
-	background: #efefef url(../images/deck.jpg);
+	/*background: #efefef url(../images/deck.jpg);*/
 	-webkit-transform: rotate3d(0,1,0,-180deg);
 	z-index: 8;
 }

@@ -20,6 +20,7 @@
 		activate();
 		function activate() {
 			if (!$rootScope.highscores) fetchData();
+			else updateAttribute();
 		}
 
 		function updatedata(nexButtonPress) {
@@ -37,7 +38,7 @@
 
 		function fetchData() {
 			var url = "https://raw.githubusercontent.com/tekdungtralala/rawdata/master/highscore.json"
-			return $http.get(url).then(processData).catch(processData);
+			$http.get(url).then(processData).catch(processData);
 		}
 
 		function processData(result) {
