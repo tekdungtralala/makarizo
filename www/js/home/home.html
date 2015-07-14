@@ -1,11 +1,26 @@
-<ion-view view-title="Makarizo" hide-nav-bar="true">
-	<ion-content>
-		<div>
-			Home Element
+<ion-view view-title="Home" hide-nav-bar="true" class="m-bacground">
+	<ion-content class="home">
+
+		<div class="row m-image-center">
+			<div class="col" >
+					<img  ng-src="images/img_03.png" class="m-image-center" />
+			</div>
 		</div>
-		<div style="position:relative; top:100px; left:100px"
-			ng-click="vm.playGame()">
-			Masuk
+
+		<div id="chart" style="margin-top: -50px; margin-bottom: -50px"></div>
+
+		<div class="row m-image-center" ng-show="vm.showMsg">
+			<div class="col home-info" >
+					Bonus Hari Ini : {{vm.bonusMsg}}
+			</div>
+		</div>
+
+		<div class="row" ng-show="vm.showMsg">
+			<div class="col m-image-center">
+				<button 
+					ng-click="vm.playGame()"
+					id="game-signin-startgame">Masuk Permainan</button>
+			</div>
 		</div>
 	</ion-content>
 </ion-view>
