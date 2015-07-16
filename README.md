@@ -21,6 +21,8 @@ Cara install
   * Note : pastikan device sudah terhubung ke komputer 
   * $ ionic run android
 
+#### Latest instalation file
+[apk file](https://github.com/tekdungtralala/makarizo/raw/master/latest%20instalation%20file/Match%20and%20Win.apk)
 
 #### Screenshot
 <img src="https://raw.githubusercontent.com/tekdungtralala/makarizo/master/screenshot/Screenshot_2015-07-16-09-40-38.png" alt="alt text" width="200" height="355">
