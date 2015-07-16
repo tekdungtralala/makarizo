@@ -20,3 +20,21 @@ Cara install
 #### 6. jalankan di android
   * Note : pastikan device sudah terhubung ke komputer 
   * $ ionic run android
+
+
+#### Screenshot
+<img src="https://raw.githubusercontent.com/tekdungtralala/makarizo/master/screenshot/Screenshot_2015-07-16-09-40-38.png" alt="alt text" width="200" height="355">
+<img src="https://raw.githubusercontent.com/tekdungtralala/makarizo/master/screenshot/Screenshot_2015-07-16-09-40-53.png" alt="alt text" width="200" height="355">
+<img src="https://raw.githubusercontent.com/tekdungtralala/makarizo/master/screenshot/Screenshot_2015-07-16-09-41-01.png" alt="alt text" width="200" height="355">
+<img src="https://raw.githubusercontent.com/tekdungtralala/makarizo/master/screenshot/Screenshot_2015-07-16-09-41-19.png" alt="alt text" width="200" height="355">
+<img src="https://raw.githubusercontent.com/tekdungtralala/makarizo/master/screenshot/Screenshot_2015-07-16-09-41-30.png" alt="alt text" width="200" height="355">
+<img src="https://raw.githubusercontent.com/tekdungtralala/makarizo/master/screenshot/Screenshot_2015-07-16-09-41-44.png" alt="alt text" width="200" height="355">
+<img src="https://raw.githubusercontent.com/tekdungtralala/makarizo/master/screenshot/Screenshot_2015-07-16-09-41-53.png" alt="alt text" width="200" height="355">
+<img src="https://raw.githubusercontent.com/tekdungtralala/makarizo/master/screenshot/Screenshot_2015-07-16-09-42-07.png" alt="alt text" width="200" height="355">
+<img src="https://raw.githubusercontent.com/tekdungtralala/makarizo/master/screenshot/Screenshot_2015-07-16-09-42-21.png" alt="alt text" width="200" height="355">
+<img src="https://raw.githubusercontent.com/tekdungtralala/makarizo/master/screenshot/Screenshot_2015-07-16-09-42-37.png" alt="alt text" width="200" height="355">
+<img src="https://raw.githubusercontent.com/tekdungtralala/makarizo/master/screenshot/Screenshot_2015-07-16-09-42-48.png" alt="alt text" width="200" height="355">
+<img src="https://raw.githubusercontent.com/tekdungtralala/makarizo/master/screenshot/Screenshot_2015-07-16-09-43-00.png" alt="alt text" width="200" height="355">
+<img src="https://raw.githubusercontent.com/tekdungtralala/makarizo/master/screenshot/Screenshot_2015-07-16-09-44-24.png" alt="alt text" width="200" height="355">
+<img src="https://raw.githubusercontent.com/tekdungtralala/makarizo/master/screenshot/Screenshot_2015-07-16-10-09-04.png" alt="alt text" width="200" height="355">
+<img src="https://raw.githubusercontent.com/tekdungtralala/makarizo/master/screenshot/Screenshot_2015-07-16-10-09-28.png" alt="alt text" width="200" height="355">
