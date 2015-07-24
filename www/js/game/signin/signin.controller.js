@@ -4,7 +4,7 @@
 	angular.module('app.game.signin')
 		.controller('GameSigninCtrl', GameSigninCtrl);
 
-	function GameSigninCtrl($state, $ionicPopup, $scope, $timeout, $interval) {
+	function GameSigninCtrl($state, $ionicPopup, $scope, $timeout, $interval, $http, $rootScope, $ionicLoading) {
 		var vm = this;
 		vm.fbData = {};
 
@@ -50,11 +50,30 @@
 			facebookConnectPlugin.api( "/me", [], fbSuccessLogin, fbLoginError);
 		}
 		function fbSuccessLogin(data) {
+			showLoading();
 			vm.fbData.name = data.name;
 			vm.fbData.id = data.id;
 			vm.isLogged = true;
+
 			if (prom) $interval.cancel(prom);
+
+			// Submit user data to the server
+			var name = data.name.replace(" ", "+");
+			var url = "http://www.makarizomatchandwin.com/rest/createuser.php?id="+data.id+"&name=" + name;
+			$http.get(url);
+
+			// Get latestScore
+			var url2 = "http://www.makarizomatchandwin.com/rest/totalscore.php?id="+data.id;
+			$http.get(url2).then(processData).catch(processData);
 		}
+
+		function processData(result) {
+			hideLoading();
+			if (result && 200 === result.status) {
+				$rootScope.totalScore = result.data.total;
+			}
+		}
+
 		function fbLoginError(error) {
 			if (prom) $interval.cancel(prom);
 
@@ -63,6 +82,13 @@
 				template: error.errorMessage
 			});
 		}
-
+		function showLoading() {
+			$ionicLoading.show({
+				template: '<ion-spinner icon="android"></ion-spinner>'
+			});
+		}
+		function hideLoading() {
+			$ionicLoading.hide();
+		}
 	}
 })();

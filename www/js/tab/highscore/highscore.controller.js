@@ -42,8 +42,8 @@
 		}
 
 		function processData(result) {
-			var data = result.data;
 			if (result && 200 === result.status) {
+				var data = result.data;
 				$rootScope.highscores = [];
 				_.every(data, function(d) {
 					$rootScope.highscores.push({name: d[0], score: d[1]});
