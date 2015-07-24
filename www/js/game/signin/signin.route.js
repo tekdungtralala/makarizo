@@ -7,6 +7,7 @@
 	function routeConfig($stateProvider) {
 		$stateProvider
 			.state('game.signin', {
+				cache: false,
 				url: '/signin',
 				views: {
 					'game': {

@@ -4,7 +4,7 @@
 	angular.module('app.game.play')
 		.controller('GameFinishCtrl', GameFinishCtrl);
 
-	function GameFinishCtrl($state, $stateParams) {
+	function GameFinishCtrl($state, $stateParams, $ionicLoading, $http, $rootScope) {
 
 		var vm = this;
 		vm.time = 0;
@@ -33,11 +33,32 @@
 			} else {
 				vm.score = score;
 				vm.level = level;
+
+				showLoading();
+				// submit score
+				var url = "http://www.makarizomatchandwin.com/rest/score.php?id="+$rootScope.userId+"&score=" + score;
+				$http.get(url).then(processData).catch(processData);
+			}
+		}
+
+		function processData(result) {
+			hideLoading();
+			if (result && 200 === result.status) {
+				$rootScope.totalScore = result.data.total;
 			}
 		}
 
 		function gotoSignin() {
 			$state.go('game.signin');
+		}
+
+		function showLoading() {
+			$ionicLoading.show({
+				template: '<ion-spinner icon="android"></ion-spinner>'
+			});
+		}
+		function hideLoading() {
+			$ionicLoading.hide();
 		}
 	}
 })();

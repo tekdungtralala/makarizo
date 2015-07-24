@@ -6,12 +6,18 @@
 
 	function GameSigninCtrl($state, $ionicPopup, $scope, $timeout, $interval, $http, $rootScope, $ionicLoading) {
 		var vm = this;
-		vm.fbData = {};
 
 		vm.isLogged = false;
 		vm.doLogin = doLogin;
 		vm.backToHome = backToHome;
 		vm.gotoPlay = gotoPlay;
+
+		activate();
+		function activate() {
+			if (!isEmptyData()) {
+				vm.isLogged = true;
+			}
+		}
 
 		function gotoPlay() {
 			$state.go('game.play');
@@ -22,7 +28,7 @@
 		}
 
 		function isEmptyData() {
-			return !vm.fbData || !vm.fbData.name || !vm.fbData.id;
+			return !$rootScope.fbData || !$rootScope.fbData.name || !$rootScope.fbData.id;
 		}
 
 		var prom = null;
@@ -51,9 +57,11 @@
 		}
 		function fbSuccessLogin(data) {
 			showLoading();
-			vm.fbData.name = data.name;
-			vm.fbData.id = data.id;
+			$rootScope.fbData = {};
+			$rootScope.fbData.name = data.name;
+			$rootScope.fbData.id = data.id;
 			vm.isLogged = true;
+			$rootScope.userId = data.id;
 
 			if (prom) $interval.cancel(prom);
 
