@@ -37,17 +37,23 @@
 		}
 
 		function fetchData() {
-			var url = "https://raw.githubusercontent.com/tekdungtralala/rawdata/master/highscore.json"
+			var url = "http://makarizomatchandwin.com/rest/highscore.php";
 			$http.get(url).then(processData).catch(processData);
 		}
 
 		function processData(result) {
+			var data = result.data;
 			if (result && 200 === result.status) {
-				vm.highscores = result.data.result;
-				$rootScope.highscores = result.data.result;
+				$rootScope.highscores = [];
+				_.every(data, function(d) {
+					$rootScope.highscores.push({name: d[0], score: d[1]});
+					return true;
+				});
 				updateAttribute();
 			}
 		}
+
+
 
 		function updateAttribute() {
 			vm.showPrevBtn = _.slice($rootScope.highscores, start - 10, start).length >= 1;

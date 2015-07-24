@@ -6,6 +6,7 @@
 
 	function HomeCtrl($state, $timeout) {
 		var vm = this;
+		var fbData = {};
 
 		vm.playGame = playGame;
 		vm.bonusMsg = null;
@@ -94,9 +95,10 @@
 
 			container.on("click", spin);
 
-
+			var stillSpin = false;
 			function spin(d) {
-
+				if (stillSpin) return;
+				stillSpin = true;
 				var  ps       = 360/data.length,
 					 pieslice = Math.round(1440/data.length),
 					 rng      = Math.floor((Math.random() * 1440) + 360);
@@ -116,6 +118,7 @@
 					.each("end", function(){
 						oldrotation = rotation;
 						showingMessage();
+						stillSpin = false;
 					});
 			}
 
