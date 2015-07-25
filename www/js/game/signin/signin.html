@@ -55,15 +55,21 @@
 		<div class="row" ng-show="vm.isLogged">
 			<div class="col col-33 col-offset-33">
 				<button 
+					ng-hide="true"
 					ng-click="vm.usingCamera()"
 					class="m-btn-default m-btn-capture button button-small button-positive">
 					Capture Struk
 				</button>
+				<input type="file" ng-file-select name="fileName" 
+					ng-model="vm.imageFile" 
+					ng-file-change="vm.generateThumb()"/>
 			</div>
 		</div>
 		<div class="row" ng-show="vm.isLogged">
 			<div class="col col-33 col-offset-33">
 					<img id="myImage" class="m-image-center" />
+					<img ng-show="vm.dataUrl != null" class="m-image-center"
+						ng-src="{{vm.dataUrl}}"/>
 			</div>
 		</div>
 

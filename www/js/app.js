@@ -12,6 +12,7 @@
 	angular.module('app', [
 		'ionic', 
 		'ui.knob',
+		"angularFileUpload",
 
 		'app.home',
 		'app.tab',

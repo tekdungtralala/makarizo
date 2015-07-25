@@ -4,16 +4,19 @@
 	angular.module('app.game.signin')
 		.controller('GameSigninCtrl', GameSigninCtrl);
 
-	function GameSigninCtrl($state, $ionicPopup, $scope, $timeout, $interval, $http, $rootScope, $ionicLoading) {
+	function GameSigninCtrl($state, $ionicPopup, $scope, $timeout, $interval, $http, $rootScope, $ionicLoading, $upload) {
+
 		var vm = this;
 		vm.isLogged = false;
 		vm.imgdata = null;
 		vm.showPlayBtn = false;
+		vm.imageFile = null;
 
 		vm.doLogin = doLogin;
 		vm.backToHome = backToHome;
 		vm.gotoPlay = gotoPlay;
 		vm.usingCamera = usingCamera;
+		vm.generateThumb = generateThumb;
 
 		var imgData = null;
 
@@ -22,6 +25,7 @@
 			if (!isEmptyData()) {
 				vm.isLogged = true;
 			}
+			// test();
 		}
 		function test() {
 			vm.isLogged = true;
@@ -29,32 +33,67 @@
 			$rootScope.fbData.name = "test";
 		}
 
-		function submitImage(imageData) {
-			
-			var url = "http://www.makarizomatchandwin.com/rest/image.php";
-			var data = $.param(
-				{
-					imageData: imageData,
-					userId: $rootScope.fbData.id
+		function generateThumb() {
+			if (vm.imageFile != null && vm.imageFile.length > 0) {
+				if (vm.imageFile[0].type.indexOf('image') > -1) {
+					var fileReader = new FileReader();
+					fileReader.readAsDataURL(vm.imageFile[0]);
+					fileReader.onload = function(e) {
+						$timeout(function() {
+							vm.dataUrl = e.target.result;
+							vm.showPlayBtn = true;
+						});
+					}
 				}
-			);
-			var postOpt = {
-				method: 'POST',
-				url: url,
-				data: data,
-				headers: {'Content-Type': 'application/x-www-form-urlencoded'}
-			};
+			}
+		}
 
-			prom = $interval(function() {
-			}, 500);
-			$timeout(function() {
-				$interval.cancel(prom);
-			}, 40000);
-
+		function submitImage() {
 			showLoading();
-			$http(postOpt)
-				.then(afterSubmitImage)
-				.catch(afterSubmitImage);
+			var file = vm.imageFile[0];
+
+			var url = "http://www.makarizomatchandwin.com/rest/image2.php";
+			file.upload = $upload.upload({
+				url: url,
+				method: "POST",
+				file: file,
+				fields: {
+						userId: $rootScope.fbData.id
+				}
+			});
+
+			file.upload
+				.success(afterSubmitImage)
+				.error(afterSubmitImage)
+				.progress(function(evt) {
+					var percent = parseInt(100.0 * evt.loaded / evt.total);
+					console.log("percent : ", percent)
+				});
+			
+			// var url = "http://www.makarizomatchandwin.com/rest/image.php";
+			// var data = $.param(
+			// 	{
+			// 		imageData: imageData,
+			// 		userId: $rootScope.fbData.id
+			// 	}
+			// );
+			// var postOpt = {
+			// 	method: 'POST',
+			// 	url: url,
+			// 	data: data,
+			// 	headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+			// };
+
+			// prom = $interval(function() {
+			// }, 500);
+			// $timeout(function() {
+			// 	$interval.cancel(prom);
+			// }, 40000);
+
+			// showLoading();
+			// $http(postOpt)
+			// 	.then(afterSubmitImage)
+			// 	.catch(afterSubmitImage);
 		}
 
 		function afterSubmitImage(result) {
@@ -98,7 +137,7 @@
 
 
 		function gotoPlay() {
-			submitImage(imgData);
+			submitImage();
 		}
 
 		function backToHome() {
