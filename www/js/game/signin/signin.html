@@ -53,14 +53,24 @@
 		</div>
 
 		<div class="row" ng-show="vm.isLogged">
-			<div class="col game-signin-label" >
-				<strong>Upload Struk</strong> <input type="file" name="foto" />
+			<div class="col col-33 col-offset-33">
+				<button 
+					ng-click="vm.usingCamera()"
+					class="m-btn-default button button-small button-positive">
+					Capture Struk
+				</button>
+			</div>
+		</div>
+		<div class="row" ng-show="vm.isLogged">
+			<div class="col col-33 col-offset-33">
+					<img id="myImage" class="m-image-center" />
 			</div>
 		</div>
 
 		<div class="row" ng-show="vm.isLogged">
 			<div class="col m-image-center">
-				<button 
+				<button
+					ng-show="vm.showPlayBtn" 
 					ng-click="vm.gotoPlay()"
 					id="game-signin-startgame">Mulai Main!!</button>
 			</div>

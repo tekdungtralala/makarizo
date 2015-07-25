@@ -6,18 +6,56 @@
 
 	function GameSigninCtrl($state, $ionicPopup, $scope, $timeout, $interval, $http, $rootScope, $ionicLoading) {
 		var vm = this;
-
 		vm.isLogged = false;
+		vm.imgdata = null;
+		vm.showPlayBtn = false;
+
 		vm.doLogin = doLogin;
 		vm.backToHome = backToHome;
 		vm.gotoPlay = gotoPlay;
+		vm.usingCamera = usingCamera;
 
 		activate();
 		function activate() {
 			if (!isEmptyData()) {
 				vm.isLogged = true;
 			}
+			test();
 		}
+		function test() {
+			vm.isLogged = true;
+			$rootScope.fbData = {};
+			$rootScope.fbData.name = "test";
+		}
+
+		function usingCamera() {
+			var cameraOptions = { 
+				quality: 10,
+				destinationType: Camera.DestinationType.DATA_URL
+			};
+			vm.showPlayBtn = false;
+			navigator.camera.getPicture(cameraSuccess, cameraError, cameraOptions);
+
+				prom = $interval(function() {
+				}, 500);
+
+				$timeout(function() {
+					$interval.cancel(prom);
+				}, 40000);
+		}
+
+		function cameraSuccess(imageData) {
+			vm.showPlayBtn = true;
+			var image = document.getElementById('myImage');
+			image.src = "data:image/jpeg;base64," + imageData;
+			
+			if (prom) $interval.cancel(prom);
+		}
+
+		function cameraError(e) {
+			if (prom) $interval.cancel(prom);
+		}
+
 
 		function gotoPlay() {
 			$state.go('game.play');
@@ -37,7 +75,6 @@
 				fbLogin();
 
 				prom = $interval(function() {
-					$scope.test++;
 				}, 500);
 
 				$timeout(function() {
