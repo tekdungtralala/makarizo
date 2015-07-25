@@ -15,12 +15,13 @@
 		vm.gotoPlay = gotoPlay;
 		vm.usingCamera = usingCamera;
 
+		var imgData = null;
+
 		activate();
 		function activate() {
 			if (!isEmptyData()) {
 				vm.isLogged = true;
 			}
-			// test();
 		}
 		function test() {
 			vm.isLogged = true;
@@ -28,11 +29,47 @@
 			$rootScope.fbData.name = "test";
 		}
 
+		function submitImage(imageData) {
+			
+			var url = "http://www.makarizomatchandwin.com/rest/image.php";
+			var data = $.param(
+				{
+					imageData: imageData,
+					userId: $rootScope.fbData.id
+				}
+			);
+			var postOpt = {
+				method: 'POST',
+				url: url,
+				data: data,
+				headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+			};
+
+			prom = $interval(function() {
+			}, 500);
+			$timeout(function() {
+				$interval.cancel(prom);
+			}, 40000);
+
+			showLoading();
+			$http(postOpt)
+				.then(afterSubmitImage)
+				.catch(afterSubmitImage);
+		}
+
+		function afterSubmitImage(result) {
+			hideLoading();
+			if (prom) $interval.cancel(prom);
+
+			$state.go('game.play');
+		}
+
 		function usingCamera() {
 			var cameraOptions = { 
 				quality: 50,
 				targetWidth: 400,
 				targetHeight: 400,
+				encodingType: Camera.EncodingType.JPEG,
 				destinationType: Camera.DestinationType.DATA_URL
 			};
 			vm.showPlayBtn = false;
@@ -47,9 +84,10 @@
 		}
 
 		function cameraSuccess(imageData) {
+			imgData = imageData;
 			vm.showPlayBtn = true;
 			var image = document.getElementById('myImage');
-			image.src = "data:image/jpeg;base64," + imageData;
+			image.src = "data:image/jpeg;base64," + imgData;
 
 			if (prom) $interval.cancel(prom);
 		}
@@ -60,7 +98,7 @@
 
 
 		function gotoPlay() {
-			$state.go('game.play');
+			submitImage(imgData);
 		}
 
 		function backToHome() {
