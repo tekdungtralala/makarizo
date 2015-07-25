@@ -20,7 +20,7 @@
 			if (!isEmptyData()) {
 				vm.isLogged = true;
 			}
-			test();
+			// test();
 		}
 		function test() {
 			vm.isLogged = true;
@@ -30,7 +30,9 @@
 
 		function usingCamera() {
 			var cameraOptions = { 
-				quality: 10,
+				quality: 50,
+				targetWidth: 400,
+				targetHeight: 400,
 				destinationType: Camera.DestinationType.DATA_URL
 			};
 			vm.showPlayBtn = false;
@@ -48,7 +50,7 @@
 			vm.showPlayBtn = true;
 			var image = document.getElementById('myImage');
 			image.src = "data:image/jpeg;base64," + imageData;
-			
+
 			if (prom) $interval.cancel(prom);
 		}
 

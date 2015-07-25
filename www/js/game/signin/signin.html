@@ -3,14 +3,14 @@
 
 		<button 
 			ng-click="vm.backToHome()"
-			class="m-btn-default button icon-left ion-chevron-left button-small button-positive">
+			class="m-btn-default m-btn-home button icon-left ion-chevron-left button-small button-positive">
 			Beranda
 		</button>
 
 		<button 
 			ng-show="vm.isLogged"
 			ng-click="vm.doLogin()"
-			class="m-btn-default m-btn-right button icon-right ion-log-out button-small button-positive">
+			class="m-btn-default m-btn-logout button icon-right ion-log-out button-small button-positive">
 			Logout
 		</button>
 		
@@ -56,7 +56,7 @@
 			<div class="col col-33 col-offset-33">
 				<button 
 					ng-click="vm.usingCamera()"
-					class="m-btn-default button button-small button-positive">
+					class="m-btn-default m-btn-capture button button-small button-positive">
 					Capture Struk
 				</button>
 			</div>
@@ -68,7 +68,7 @@
 		</div>
 
 		<div class="row" ng-show="vm.isLogged">
-			<div class="col m-image-center">
+			<div class="col m-image-center m-capture-btn">
 				<button
 					ng-show="vm.showPlayBtn" 
 					ng-click="vm.gotoPlay()"
