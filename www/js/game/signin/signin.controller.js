@@ -11,6 +11,7 @@
 		vm.imgdata = null;
 		vm.showPlayBtn = false;
 		vm.imageFile = null;
+		vm.dataUrl = null;
 
 		vm.doLogin = doLogin;
 		vm.backToHome = backToHome;
@@ -34,6 +35,8 @@
 		}
 
 		function generateThumb() {
+			vm.showPlayBtn = false;
+			vm.dataUrl = null;
 			if (vm.imageFile != null && vm.imageFile.length > 0) {
 				if (vm.imageFile[0].type.indexOf('image') > -1) {
 					var fileReader = new FileReader();
