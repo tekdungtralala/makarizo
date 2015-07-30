@@ -53,22 +53,50 @@
 		</div>
 
 		<div class="row" ng-show="vm.isLogged">
-			<div class="col col-33 col-offset-33">
-				<button 
-					ng-hide="true"
-					ng-click="vm.usingCamera()"
-					class="m-btn-default m-btn-capture button button-small button-positive">
-					Capture Struk
-				</button>
-				<input type="file" ng-file-select name="fileName" 
-					ng-model="vm.imageFile" 
-					ng-file-change="vm.generateThumb()"/>
+			<div class="col col-50 game-signin-right">
+				<label class="toggle toggle-positive">
+					<input 
+						ng-model="vm.isCamera"
+						ng-change="vm.toggleImageMethod()"
+						type="checkbox" >
+						<div class="track">
+						<div class="handle"></div>
+					</div>
+				</label>
+			</div>
+			<div class="col col-50 game-signin-file-upload-info">
+				<strong>
+					<span ng-show="vm.isCamera">Using Camera</span>
+					<span ng-show="!vm.isCamera">Upload File</span>
+				</strong>
+			</div>
+		</div>
+
+		<div class="row" ng-show="vm.isLogged">
+			<div class="col col-33 col-offset-33 game-signin-center">
+				<span ng-show="vm.isCamera">
+					<button 
+						ng-click="vm.usingCamera()"
+						class="m-btn-default m-btn-capture button button-small button-positive">
+						Capture Struk
+					</button>
+				</span>
+				<span ng-show="!vm.isCamera">
+					<input 
+						type="file" ng-file-select name="fileName" 
+						ng-model="vm.imageFile" 
+						ng-file-change="vm.generateThumb()"/>
+				</span>
 			</div>
 		</div>
 		<div class="row" ng-show="vm.isLogged">
 			<div class="col col-33 col-offset-33">
-					<img id="myImage" class="m-image-center" />
-					<img ng-show="vm.dataUrl != null" class="m-image-center"
+					<img 
+						ng-show="vm.isCamera"
+						id="myImage" class="m-image-center" />
+					<img 
+						ng-show="!vm.isCamera"
+						ng-show="vm.dataUrl != null" class="m-image-center"
 						ng-src="{{vm.dataUrl}}"/>
 			</div>
 		</div>

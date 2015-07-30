@@ -50,7 +50,7 @@
 
 .game-signin .button.m-btn-default.m-btn-capture {
 	margin: 0 0 0 0;
-	padding: 0 0 0 0;
+	padding: 0 10px 0 10px;
 }
 
 .game-signin-label {
@@ -98,4 +98,15 @@
 	text-shadow:1px 1px 1px rgba(0,0,0,.8);
 	cursor:pointer;
 }
+
+.game-signin-right {
+	text-align: right;
+}
+
+.game-signin-center {
+	text-align: center;
+}
+
+.game-signin-file-upload-info {
+	padding-top: 10px;
 }

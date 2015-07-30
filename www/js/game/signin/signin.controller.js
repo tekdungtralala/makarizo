@@ -12,12 +12,16 @@
 		vm.showPlayBtn = false;
 		vm.imageFile = null;
 		vm.dataUrl = null;
+		vm.isCamera = true; // true for using camera, false for using file upload
+		var successUseCamera = false;
+		var successUploadImage = false;
 
 		vm.doLogin = doLogin;
 		vm.backToHome = backToHome;
 		vm.gotoPlay = gotoPlay;
 		vm.usingCamera = usingCamera;
 		vm.generateThumb = generateThumb;
+		vm.toggleImageMethod = toggleImageMethod;
 
 		var imgData = null;
 
@@ -34,7 +38,18 @@
 			$rootScope.fbData.name = "test";
 		}
 
+		function toggleImageMethod() {
+			vm.showPlayBtn = false;
+			if (vm.isCamera && successUseCamera) {
+				vm.showPlayBtn = true;
+			}
+			if (!vm.isCamera && successUploadImage) {
+				vm.showPlayBtn = true;
+			}
+		}
+
 		function generateThumb() {
+			successUploadImage = false;
 			vm.showPlayBtn = false;
 			vm.dataUrl = null;
 			if (vm.imageFile != null && vm.imageFile.length > 0) {
@@ -45,6 +60,7 @@
 						$timeout(function() {
 							vm.dataUrl = e.target.result;
 							vm.showPlayBtn = true;
+							successUploadImage = true;
 						});
 					}
 				}
@@ -53,50 +69,52 @@
 
 		function submitImage() {
 			showLoading();
-			var file = vm.imageFile[0];
-
-			var url = "http://www.makarizomatchandwin.com/rest/image2.php";
-			file.upload = $upload.upload({
-				url: url,
-				method: "POST",
-				file: file,
-				fields: {
+			if (vm.isCamera) {
+				var url = "http://www.makarizomatchandwin.com/rest/image.php";
+				var data = $.param(
+					{
+						imageData: imgData,
 						userId: $rootScope.fbData.id
-				}
-			});
+					}
+				);
+				var postOpt = {
+					method: 'POST',
+					url: url,
+					data: data,
+					headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+				};
 
-			file.upload
-				.success(afterSubmitImage)
-				.error(afterSubmitImage)
-				.progress(function(evt) {
-					var percent = parseInt(100.0 * evt.loaded / evt.total);
-					console.log("percent : ", percent)
+				prom = $interval(function() {
+				}, 500);
+				$timeout(function() {
+					$interval.cancel(prom);
+				}, 40000);
+
+				showLoading();
+				$http(postOpt)
+					.then(afterSubmitImage)
+					.catch(afterSubmitImage);
+			} else {
+				var file = vm.imageFile[0];
+
+				var url = "http://www.makarizomatchandwin.com/rest/image2.php";
+				file.upload = $upload.upload({
+					url: url,
+					method: "POST",
+					file: file,
+					fields: {
+							userId: $rootScope.fbData.id
+					}
 				});
-			
-			// var url = "http://www.makarizomatchandwin.com/rest/image.php";
-			// var data = $.param(
-			// 	{
-			// 		imageData: imageData,
-			// 		userId: $rootScope.fbData.id
-			// 	}
-			// );
-			// var postOpt = {
-			// 	method: 'POST',
-			// 	url: url,
-			// 	data: data,
-			// 	headers: {'Content-Type': 'application/x-www-form-urlencoded'}
-			// };
 
-			// prom = $interval(function() {
-			// }, 500);
-			// $timeout(function() {
-			// 	$interval.cancel(prom);
-			// }, 40000);
-
-			// showLoading();
-			// $http(postOpt)
-			// 	.then(afterSubmitImage)
-			// 	.catch(afterSubmitImage);
+				file.upload
+					.success(afterSubmitImage)
+					.error(afterSubmitImage)
+					.progress(function(evt) {
+						var percent = parseInt(100.0 * evt.loaded / evt.total);
+						console.log("percent : ", percent)
+					});
+			}
 		}
 
 		function afterSubmitImage(result) {
@@ -107,6 +125,7 @@
 		}
 
 		function usingCamera() {
+			successUseCamera = false;
 			var cameraOptions = { 
 				quality: 50,
 				targetWidth: 400,
@@ -126,6 +145,7 @@
 		}
 
 		function cameraSuccess(imageData) {
+			successUseCamera = true;
 			imgData = imageData;
 			vm.showPlayBtn = true;
 			var image = document.getElementById('myImage');
