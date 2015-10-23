@@ -25,19 +25,13 @@
 [apk file](https://github.com/tekdungtralala/makarizo/raw/master/latest%20instalation%20file/Match%20and%20Win.apk)
 
 #### Screenshot
-<img src="https://raw.githubusercontent.com/tekdungtralala/makarizo/master/screenshot/Screenshot_2015-07-16-09-40-38.png" alt="alt text" width="200" height="355">
-<img src="https://raw.githubusercontent.com/tekdungtralala/makarizo/master/screenshot/Screenshot_2015-07-16-09-40-53.png" alt="alt text" width="200" height="355">
-<img src="https://raw.githubusercontent.com/tekdungtralala/makarizo/master/screenshot/Screenshot_2015-07-16-09-41-01.png" alt="alt text" width="200" height="355">
-<img src="https://raw.githubusercontent.com/tekdungtralala/makarizo/master/screenshot/Screenshot_2015-07-16-09-41-19.png" alt="alt text" width="200" height="355">
-<img src="https://raw.githubusercontent.com/tekdungtralala/makarizo/master/screenshot/Screenshot_2015-07-16-09-41-30.png" alt="alt text" width="200" height="355">
-<img src="https://raw.githubusercontent.com/tekdungtralala/makarizo/master/screenshot/Screenshot_2015-07-16-09-41-44.png" alt="alt text" width="200" height="355">
-<img src="https://raw.githubusercontent.com/tekdungtralala/makarizo/master/screenshot/Screenshot_2015-07-16-09-41-53.png" alt="alt text" width="200" height="355">
-<img src="https://raw.githubusercontent.com/tekdungtralala/makarizo/master/screenshot/Screenshot_2015-08-02-19-58-04.png" alt="alt text" width="200" height="355">
-<img src="https://raw.githubusercontent.com/tekdungtralala/makarizo/master/screenshot/Screenshot_2015-08-02-19-58-48.png" alt="alt text" width="200" height="355">
-<img src="https://raw.githubusercontent.com/tekdungtralala/makarizo/master/screenshot/Screenshot_2015-07-16-09-42-21.png" alt="alt text" width="200" height="355">
-<img src="https://raw.githubusercontent.com/tekdungtralala/makarizo/master/screenshot/Screenshot_2015-07-16-09-42-37.png" alt="alt text" width="200" height="355">
-<img src="https://raw.githubusercontent.com/tekdungtralala/makarizo/master/screenshot/Screenshot_2015-07-16-09-42-48.png" alt="alt text" width="200" height="355">
-<img src="https://raw.githubusercontent.com/tekdungtralala/makarizo/master/screenshot/Screenshot_2015-07-16-09-43-00.png" alt="alt text" width="200" height="355">
-<img src="https://raw.githubusercontent.com/tekdungtralala/makarizo/master/screenshot/Screenshot_2015-07-16-09-44-24.png" alt="alt text" width="200" height="355">
-<img src="https://raw.githubusercontent.com/tekdungtralala/makarizo/master/screenshot/Screenshot_2015-07-16-10-09-04.png" alt="alt text" width="200" height="355">
-<img src="https://raw.githubusercontent.com/tekdungtralala/makarizo/master/screenshot/Screenshot_2015-07-16-10-09-28.png" alt="alt text" width="200" height="355">
+<img src="https://raw.githubusercontent.com/tekdungtralala/makarizo/master/screenshot/Screenshot_2015-10-23-11-00-03.png" alt="alt text" width="200" height="355">
+<img src="https://raw.githubusercontent.com/tekdungtralala/makarizo/master/screenshot/Screenshot_2015-10-23-11-00-13.png" alt="alt text" width="200" height="355">
+<img src="https://raw.githubusercontent.com/tekdungtralala/makarizo/master/screenshot/Screenshot_2015-10-23-11-00-22.png" alt="alt text" width="200" height="355">
+<img src="https://raw.githubusercontent.com/tekdungtralala/makarizo/master/screenshot/Screenshot_2015-10-23-11-00-36.png" alt="alt text" width="200" height="355">
+<img src="https://raw.githubusercontent.com/tekdungtralala/makarizo/master/screenshot/Screenshot_2015-10-23-11-00-45.png" alt="alt text" width="200" height="355">
+<img src="https://raw.githubusercontent.com/tekdungtralala/makarizo/master/screenshot/Screenshot_2015-10-23-11-01-34.png" alt="alt text" width="200" height="355">
+<img src="https://raw.githubusercontent.com/tekdungtralala/makarizo/master/screenshot/Screenshot_2015-10-23-11-01-54.png" alt="alt text" width="200" height="355">
+<img src="https://raw.githubusercontent.com/tekdungtralala/makarizo/master/screenshot/Screenshot_2015-10-23-11-02-18.png" alt="alt text" width="200" height="355">
+<img src="https://raw.githubusercontent.com/tekdungtralala/makarizo/master/screenshot/Screenshot_2015-10-23-11-03-09.png" alt="alt text" width="200" height="355">
+<img src="https://raw.githubusercontent.com/tekdungtralala/makarizo/master/screenshot/Screenshot_2015-10-23-11-03-43.png" alt="alt text" width="200" height="355">
