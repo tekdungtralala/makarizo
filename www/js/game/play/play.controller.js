@@ -10,7 +10,7 @@
 		var WAITING_TIME = 300;
 		var TOTAL_CARD = [0, 4, 6, 8, 10, 12, 16, 20];
 
-		var MAX_TIME = [0, 5, 10, 15, 20, 25, 30, 35];
+		var MAX_TIME = [0, 30, 35, 40, 45, 50, 55, 60];
 		var imageUrls = [];
 		var vm = this;
 		vm.defaultCard = "images/cardback.png";

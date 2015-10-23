@@ -54,6 +54,17 @@
 	.config(function($stateProvider, $urlRouterProvider) {
 		// if none of the above states are matched, use this as the fallback
 		$urlRouterProvider.otherwise('/tab/home');
-	});
+	})
+ .directive('customdir', [function () {
+	 return {
+		 restrict: 'AEC',
+		 link:function(scope, element, attrs) {
+			var maxWidth = $(window).width() - 20;
+			var tag = '<embed src="images/fortune.swf" quality="best" wmode="transparent" allowfullscreen="true" width="'+maxWidth+'x" height="'+maxWidth+'px">';
+			element.append(tag);
+		 }
+	 };
+ }]);
+
 
 })();

@@ -8,6 +8,7 @@
 		var vm = this;
 		vm.abc = "def;";
 
+		// vm.width = '450px';
 		vm.doSpin = doSpin;
 		function doSpin() {
 			AnimateRotate(getRandomInt(1000, 5000));

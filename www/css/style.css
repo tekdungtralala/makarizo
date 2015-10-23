@@ -20,6 +20,14 @@
 	max-width: 36%;
 	padding-top: 18px;
 }
+.m-image-wheel{
+	-webkit-animation: rotation 5s infinite linear;
+}
+@-webkit-keyframes rotation {
+    from {-webkit-transform: rotate(0deg);}
+    to   {-webkit-transform: rotate(359deg);}
+}
+
 .m-center {
 	text-align: center;
 }
