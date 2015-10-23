@@ -31,7 +31,7 @@
 <img src="https://raw.githubusercontent.com/tekdungtralala/makarizo/master/screenshot/Screenshot_2015-10-23-11-00-36.png" alt="alt text" width="200" height="355">
 <img src="https://raw.githubusercontent.com/tekdungtralala/makarizo/master/screenshot/Screenshot_2015-10-23-11-00-45.png" alt="alt text" width="200" height="355">
 <img src="https://raw.githubusercontent.com/tekdungtralala/makarizo/master/screenshot/Screenshot_2015-10-23-11-01-34.png" alt="alt text" width="200" height="355">
-<img src="https://raw.githubusercontent.com/tekdungtralala/makarizo/master/screenshot/Screenshot_2015-10-23-11-01-54.png" alt="alt text" width="200" height="355">
+<img src="https://raw.githubusercontent.com/tekdungtralala/makarizo/master/screenshot/Screenshot_2015-10-23-11-01-51.png" alt="alt text" width="200" height="355">
 <img src="https://raw.githubusercontent.com/tekdungtralala/makarizo/master/screenshot/Screenshot_2015-10-23-11-02-18.png" alt="alt text" width="200" height="355">
 <img src="https://raw.githubusercontent.com/tekdungtralala/makarizo/master/screenshot/Screenshot_2015-10-23-11-03-09.png" alt="alt text" width="200" height="355">
 <img src="https://raw.githubusercontent.com/tekdungtralala/makarizo/master/screenshot/Screenshot_2015-10-23-11-03-43.png" alt="alt text" width="200" height="355">
