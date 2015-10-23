@@ -22,7 +22,7 @@
   * $ ionic run android
 
 #### Latest instalation file
-[apk file](https://github.com/tekdungtralala/makarizo/raw/master/latest%20instalation%20file/Match%20and%20Win.apk)
+[apk file](https://github.com/tekdungtralala/makarizo/raw/master/latest%20instalation%20file/Makarizo%20Match%20and%20Win.apk)
 
 #### Screenshot
 <img src="https://raw.githubusercontent.com/tekdungtralala/makarizo/master/screenshot/Screenshot_2015-10-23-11-00-03.png" alt="alt text" width="200" height="355">
